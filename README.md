@@ -13,13 +13,18 @@ by
 
 E.I. Chatzopoulou, P. Raharja-Liu, A. Murschhauser, F. Sekhavati, F. Buggenthin, A. M. Vollmar, C. Marr and J.O. Rädler
 
-# II. File structure
+# II requirements
+
+- Python 3.5/3.6 with requirements in **Section VII** installed
+- Fiji with TrackMate plugin
+
+# III. File structure
 
 There are two types of data set: the synchronized and the unsynchronized data set. For both data set there are numbered positions from 1 to 63 (note that not all positions are used).
 
  The characters after **#** describes the purpose of a directory and should be ignored. For each position, replace **PP** with two digit position id.
 
-## II.1 Unsynchronized experiment data
+## III.1 Unsynchronized experiment data
 
 For the unsynchronized dataset, the file is structured this way:
 
@@ -82,7 +87,7 @@ or Daunorubicin:
 
 Before starting with analysis, every subdirectories (every row in file structure ending with `/`) and files marked as **(raw file)** have to exist and be placed properly.
 
-## II.2 Synchronized experiment data
+## III.2 Synchronized experiment data
 
 For the synchronized dataset, the file is structured this way:
 
@@ -129,32 +134,14 @@ or Daunorubicin:
 
 Before starting with analysis, every subdirectories (every row in file structure ending with `/`) and files marked as **(raw file)** have to exist and be placed properly.
 
-<!---
-
-## II.2 Output directory `out`
-
-### II.2.1 Unsynchronized experiment
-
-For each analyzed position, there should be two `out` directories. `out-focus/merged/out/` contains the output of cell recognition and tracking (see **Section XX**).
-
- Depending on the drug treatment used, either `pi/merged` (Vincristine) or `caspase` (Daunorubicin) should have an `out` directory containing the output of cell recognition and tracking (see **Section XX**).
-
-### II.2.2 Synchronized experiment
-
-For each analyzed position, there should be two `out` directories. `out-focus/out/` contains the output of cell recognition and tracking (see **Section XX**).
-
-In similar fashion to the unsynchronized experiment, depending on the drug treatment used, either `pi` (Vincristine) or `caspase` (Daunorubicin) should have an `out` directory containing the output of cell recognition and tracking (see **Section XX**).
-
---->
-
-# III. `fij.py`
+# IV. `fij.py`
 
 The Jython pre-processing script `fij.py`is used to pre-process the image. This will produce:
 * pre-processed out-of-focus time-lapse (unsynchronized: `out-focus/merged/merged.tif`, synchronized: `out-focus/out/stacks/out-focus_corrected.tif`)
 * pre-processed PI time-lapse (unsynchronized: `pi/merged/merged-sub.tif`, synchronized: `pi/sub.tif`)
 * pre-processed Caspase time-lapse (unsynchronized: `caspase/caspasexyPPc1_sub.tif`, synchronized: `caspase/seq0001xyPPc1_sub.tif`)
 
-## III.1 Program parameters
+## IV.1 Program parameters
 
 Program parameters are enclosed with `## PROGRAM PARAMETERS START ##` and `## PROGRAM PARAMETERS END ##`:
 
@@ -163,15 +150,15 @@ Program parameters are enclosed with `## PROGRAM PARAMETERS START ##` and `## PR
 * `target_dir_pattern_unsynchronized`: patterns for location of files. E.g. if the path to unsynchronized is `D:/path/to/unsynchronized/`, write `D:\\path\\to\\unsynchronized\\eli-new-unsync-bf-%s` (for MacOS and Linux, write the path as is with the end pattern `eli-new-unsync-bf-%s` kept).
 * `target_dir_pattern_synchronized`: similar as above.
 
-## III.2 Running `fij.py`
+## IV.2 Running `fij.py`
 
 In Fiji, go to `File > Open`, select `fij.py` and run.
 
-# IV. Trenches mask
+# V. Trenches mask
 
 For each position, a mask can be created by adjusting contrast and brightness (in Fiji, `Image > Adjust > Brightness/Contrast`). The TIF image `sample-mask.tif` shows an example of good mask.
 
-# V. Cells recognition and tracking
+# VI. Cells recognition and tracking
 
 This is done with TrackMate. To do that, in Fiji, load a time-lapse and `Plugins > Tracking > TrackMate`.
 
@@ -184,11 +171,11 @@ And, depending on treatment, EITHER:
 OR
 * Pre-processed Caspase time-lapse (Daunorubicin), based on `caspase/caspasexyPPc1_sub.tif` (unsynchronized) or `caspase/seq0001xyPPc1_sub.tif` (synchronized).
 
-## V.1 Tracking parameters
+## VI.1 Tracking parameters
 
 Following tracking parameters are needed:
 
-### V.1.1 Out-of-focus cell detection and tracking
+### VI.1.1 Out-of-focus cell detection and tracking
 
 * Pixel width: 0.647 inch
 * Pixel height: 0.647 inch
@@ -215,7 +202,7 @@ Gathere information stored in `out-focus/merged/out/tracked/` or `out-focus/out/
 * Spots in tracks statistics
 * Track statistics
 
-### V.1.1 PI or caspase cell detection and tracking
+### VI.1.1 PI or caspase cell detection and tracking
 
 * Pixel width: 0.647 inch
 * Pixel height: 0.647 inch
@@ -239,7 +226,7 @@ Tracking information to be saved are the same as out-of-focus time-lapse.
 
 For unsynchronized experiment, save in `pi/merged/out_sub_adjust/` (Vincrisitine) or `caspase/out_sub_adjust/`. For unsynchronized experiment, save in `pi/merged/out_sub_adjust/` (Vincrisitine) or `caspase/out_sub_adjust/`.
 
-# VI. Data fusion
+# VII. Data fusion
 
 The jupyter notebooks `global_analysis-syn.ipynb` and `global_analysis-unsyn.ipynb` provide the suites for data fusion and exploration. The only parameter user needs to adjust is `PATH_TO_DATA` within the notebook. Following python libraries (besides the jupyter notebook requirements) are needed:
 
