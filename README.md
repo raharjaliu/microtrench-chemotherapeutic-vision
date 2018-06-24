@@ -40,13 +40,13 @@ For the unsynchronized dataset, the file is structured this way:
 - - out-focus/ # out-of-focus bright field time-lapse data
 - - - before/
 - - - - bfxyPPc1.tif # time-lapse file (raw file)
-- - - - out/stacks/ # contains output of time-lapse preprocessing (see Section III)
+- - - - out/stacks/ # contains output of time-lapse preprocessing (see Section IV)
 - - - after/
 - - - - bfxyPPc1.tif # time-lapse file (raw file)
-- - - - out/stacks/ # contains output of time-lapse preprocessing (see Section III)
+- - - - out/stacks/ # contains output of time-lapse preprocessing (see Section IV)
 - - - merged/ # contains concatenated before and after time-lapses
-- - - - merged.tif # concatenated time-lapse file (see Section III)
-- - - - out/tracked/ # output of cell recognition and tracking (see Section XX)
+- - - - merged.tif # concatenated time-lapse file (see Section IV)
+- - - - out/tracked/ # output of cell recognition and tracking (see Section VI)
 ```
 
 Depending on the treatment, further structure has to look like following for Vincristine:
@@ -54,17 +54,17 @@ Depending on the treatment, further structure has to look like following for Vin
 ```
 - - caspase/ # caspase channel time-lapse data
 - - - caspasexyPPc1.tif # caspase channel time-lapse data (raw file)
-- - - caspasexyPPc1_sub.tif # the position-specific average-substracted caspase channel video (see Section III)
+- - - caspasexyPPc1_sub.tif # the position-specific average-substracted caspase channel video (see Section IV)
 - - pi/ # PI channel time-lapse data
 - - - before/
 - - - - pi_in-focusxyPPc1.tif  # caspase channel time-lapse data (raw file)
 - - - after/
 - - - - pi_in-focusxyPPc1.tif  # caspase channel time-lapse data (raw file)
 - - - merged/
-- - - - merged.tif # concatenated time-lapse file (see Section III)
-- - - - merged_sub.tif # the position-specific average-substracted caspase channel video (see Section III)
-- - - - merged_sub_adjust.tif # the position-specific average-substracted + brightness and contrast adjusted caspase channel video (see Section III)
-- - - - out_sub_adjust/ # output of cell recognition and tracking (see Section XX)
+- - - - merged.tif # concatenated time-lapse file (see Section IV)
+- - - - merged_sub.tif # the position-specific average-substracted caspase channel video (see Section IV)
+- - - - merged_sub_adjust.tif # the position-specific average-substracted + brightness and contrast adjusted caspase channel video (see Section IV)
+- - - - out_sub_adjust/ # output of cell recognition and tracking (see Section VI)
 ```
 
 or Daunorubicin:
@@ -72,16 +72,16 @@ or Daunorubicin:
 ```
 - - caspase/ # caspase channel time-lapse data
 - - - caspasexyPPc1.tif # caspase channel time-lapse data (raw file)
-- - - caspasexyPPc1_sub.tif # the position-specific average-substracted caspase channel video (see Section III)
-- - - out_sub_adjust/ # output of cell recognition and tracking (see Section XX)
+- - - caspasexyPPc1_sub.tif # the position-specific average-substracted caspase channel video (see Section IV)
+- - - out_sub_adjust/ # output of cell recognition and tracking (see Section VI)
 - - pi/ # PI channel time-lapse data
 - - - before/
 - - - - pi_in-focusxyPPc1.tif  # caspase channel time-lapse data (raw file)
 - - - after/
 - - - - pi_in-focusxyPPc1.tif  # caspase channel time-lapse data (raw file)
 - - - merged/
-- - - - merged.tif # concatenated time-lapse file (see Section III)
-- - - - merged_sub.tif # the position-specific average-substracted caspase channel video (see Section III)
+- - - - merged.tif # concatenated time-lapse file (see Section IV)
+- - - - merged_sub.tif # the position-specific average-substracted caspase channel video (see Section IV)
 - - - - merged_sub_adjust.tif # the position-specific average-substracted + brightness and contrast adjusted caspase channel video
 ```
 
@@ -100,9 +100,9 @@ For the synchronized dataset, the file is structured this way:
 - - out-focus/
 - - - seq0003xyPPc1.tif # time-lapse file (raw file)
 - - - out/
-- - - - stacks/ # output of time-lapse preprocessing (see Section III)
-- - - - - out-focus_corrected.tif # output of cell recognition and tracking (see Section XX)
-- - - - tracks/ # output of cell recognition and tracking (see Section XX)
+- - - - stacks/ # output of time-lapse preprocessing (see Section IV)
+- - - - - out-focus_corrected.tif # output of cell recognition and tracking (see Section VI)
+- - - - tracks/ # output of cell recognition and tracking (see Section VI)
 ```
 
 Depending on the treatment, further structure has to look like following for Vincristine:
@@ -115,7 +115,7 @@ Depending on the treatment, further structure has to look like following for Vin
 - - - seq0002xy01c1.tif # caspase channel time-lapse data (raw file)
 - - - sub.tif # the position-specific average-substracted caspase channel video
 - - - sub_adjust.tif # the position-specific average-substracted + brightness and contrast-adjusted caspase channel video
-- - - out_sub_adjust/ # output of cell recognition and tracking (see Section XX)
+- - - out_sub_adjust/ # output of cell recognition and tracking (see Section VI)
 ```
 
 or Daunorubicin:
@@ -124,7 +124,7 @@ or Daunorubicin:
 - - caspase/
 - - - seq0001xyPPc1.tif # caspase channel time-lapse data (raw file)
 - - - seq0001xyPPc1_sub.tif # the position-specific average-substracted caspase channel video
-- - - out_sub_adjust/ # output of cell recognition and tracking (see Section XX)
+- - - out_sub_adjust/ # output of cell recognition and tracking (see Section VI)
 - - pi/
 - - - seq0002xy01c1.tif # caspase channel time-lapse data (raw file)
 - - - sub.tif # the position-specific average-substracted caspase channel video
