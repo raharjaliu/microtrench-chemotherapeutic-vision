@@ -195,18 +195,18 @@ Following tracking parameters are needed:
 * Voxel depth: 1 inch
 * Time interval: 1800 seconds
 * Cell detection:
- * Method: downsample LoG
- * Estimated blob diameter: 15 inches
- * Threshold: 0.0
- * Downsampling factor: 2
- * Initial threshold: set to cells number < 100k
- * Later threshold set optimally
+ - Method: downsample LoG
+ - Estimated blob diameter: 15 inches
+ - Threshold: 0.0
+ - Downsampling factor: 2
+ - Initial threshold: set to cells number < 100k
+ - Later threshold set optimally
 * Cell tracking:
- * Method: LAP Tracker
- * Frame to frame linking: 15 pixels
- * Track segment gap closing: 20 pixels + 4 frames
- * Track segment splitting: 25 pixels
- * No track segment merging
+ - Method: LAP Tracker
+ - Frame to frame linking: 15 pixels
+ - Track segment gap closing: 20 pixels + 4 frames
+ - Track segment splitting: 25 pixels
+ - No track segment merging
 
 Gathere information stored in `out-focus/merged/out/tracked/` or `out-focus/out/tracked/` (synchronized):
 * All spots statistics
@@ -222,18 +222,18 @@ Gathere information stored in `out-focus/merged/out/tracked/` or `out-focus/out/
 * Voxel depth: 1 inch
 * Time interval: 1800 seconds
 * Cell detection:
- * Method: downsample LoG
- * Estimated blob diameter: 30 inches
- * Threshold: 0.0
- * Downsampling factor: 2
- * Initial threshold: set to cells number < 500k
- * Later threshold set optimally
+ - Method: downsample LoG
+ - Estimated blob diameter: 30 inches
+ - Threshold: 0.0
+ - Downsampling factor: 2
+ - Initial threshold: set to cells number < 500k
+ - Later threshold set optimally
 * Cell tracking:
- * Method: LAP Tracker
- * Frame to frame linking: 30 pixels
- * Track segment gap closing: 35 pixels + 2 frames
- * No track segment splitting
- * No track segment merging
+ - Method: LAP Tracker
+ - Frame to frame linking: 30 pixels
+ - Track segment gap closing: 35 pixels + 2 frames
+ - No track segment splitting
+ - No track segment merging
 
 Tracking information to be saved are the same as out-of-focus time-lapse.
 
